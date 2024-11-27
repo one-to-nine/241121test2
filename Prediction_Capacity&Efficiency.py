@@ -42,7 +42,7 @@ if st.session_state.authenticated:
     st.markdown(
         """
         <h1 style='text-align: center;'>Taurus 제품 용량 효율 예측 모델</h1>
-        <h5 style='text-align: center;'>Taurus 공정 조건에 따른 용량과 효율을 예측합니다.</h5>
+        <h5 style='text-align: center;'>Taurus 공정 조건에 따른 방전 용량과 효율을 예측합니다.</h5>
         """,
         unsafe_allow_html=True
     )
@@ -91,7 +91,7 @@ if st.session_state.authenticated:
             # 결과 출력
             st.markdown("### 예측 결과")
             results_df = pd.DataFrame({
-                '예측 항목': ['Delithiation Capacity (1V, 25℃)', '초기 효율'],
+                '예측 항목': ['방전 용량 (1V, 25℃)', '초기 효율'],
                 '예측 값': [f'{predictions[0][0]:.2f} mAh/g', f'{predictions[0][1]:.2f} %']
             })
             st.table(results_df)
